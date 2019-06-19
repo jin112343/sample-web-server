@@ -1,0 +1,19 @@
+{
+  "name": "sample-web-server",
+  "version": "1.0.0",
+  "description": "テクノロジー（藤原）Node.jsによるサンプルWebサーバ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jin112343/sample-web-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jin112343/sample-web-server/issues"
+  },
+  "homepage": "https://github.com/jin112343/sample-web-server#readme"
+}

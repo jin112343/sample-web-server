@@ -707,5 +707,132 @@ use v12.4.0
 JinnoMacBook-Pro:sample-web-server jinmizou$  node -v
 v12.4.0
 JinnoMacBook-Pro:sample-web-server jinmizou$ 
+Last login: Wed Jun 19 14:31:37 on ttys000
+JinnoMacBook-Pro:~ jinmizou$ /usr/bin/vi ~/.bash_profile
+JinnoMacBook-Pro:~ jinmizou$ ls
+-bash: ls: command not found
+JinnoMacBook-Pro:~ jinmizou$ cd ~
+JinnoMacBook-Pro:~ jinmizou$ cd fujiwara
+JinnoMacBook-Pro:fujiwara jinmizou$ ls
+-bash: ls: command not found
+JinnoMacBook-Pro:fujiwara jinmizou$ cd ..
+JinnoMacBook-Pro:~ jinmizou$ /usr/bin/vi ~/.bash_profile
+JinnoMacBook-Pro:~ jinmizou$ export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin
+JinnoMacBook-Pro:~ jinmizou$ ls
+Applications		Library			VirtualBox VMs
+Creative Cloud Files	Movies			VirualBox
+Desktop			Music			fujiwara
+Documents		Pictures		名刺5.ai
+Downloads		Public			名刺7.pdf
+JinnoMacBook-Pro:~ jinmizou$ cd fujiwara
+JinnoMacBook-Pro:fujiwara jinmizou$ ls
+hello-git		sample-web-server
+learning-http-message	simple-web-site
+JinnoMacBook-Pro:fujiwara jinmizou$ sample-web-server/
+-bash: sample-web-server/: is a directory
+JinnoMacBook-Pro:fujiwara jinmizou$ code .
+JinnoMacBook-Pro:fujiwara jinmizou$ nodebrew
+-bash: nodebrew: command not found
+JinnoMacBook-Pro:fujiwara jinmizou$ curl -L git.io/nodebrew | perl - setup
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+100 24634  100 24634    0     0  10565      0  0:00:02  0:00:02 --:--:-- 10565
+Fetching nodebrew...
+Installed nodebrew in $HOME/.nodebrew
 
+========================================
+Export a path to nodebrew:
+
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+========================================
+JinnoMacBook-Pro:fujiwara jinmizou$ echo "export PATH=$HOME/.nodebrew/current/bin:$PATH" >> ~/.bashrc
+JinnoMacBook-Pro:fujiwara jinmizou$ source ~/.bashrc
+JinnoMacBook-Pro:fujiwara jinmizou$ nodebrew
+nodebrew 1.0.1
+
+Usage:
+    nodebrew help                         Show this message
+    nodebrew install <version>            Download and install <version> (from binary)
+    nodebrew compile <version>            Download and install <version> (from source)
+    nodebrew install-binary <version>     Alias of `install` (For backward compatibility)
+    nodebrew uninstall <version>          Uninstall <version>
+    nodebrew use <version>                Use <version>
+    nodebrew list                         List installed versions
+    nodebrew ls                           Alias for `list`
+    nodebrew ls-remote                    List remote versions
+    nodebrew ls-all                       List remote and installed versions
+    nodebrew alias <key> <value>          Set alias
+    nodebrew unalias <key>                Remove alias
+    nodebrew clean <version> | all        Remove source file
+    nodebrew selfupdate                   Update nodebrew
+    nodebrew migrate-package <version>    Install global NPM packages contained in <version> to current version
+    nodebrew exec <version> -- <command>  Execute <command> using specified <version>
+
+Example:
+    # install
+    nodebrew install v8.9.4
+
+    # use a specific version number
+    nodebrew use v8.9.4
+JinnoMacBook-Pro:fujiwara jinmizou$ ls
+hello-git		sample-web-server
+learning-http-message	simple-web-site
+JinnoMacBook-Pro:fujiwara jinmizou$ cd sample-web-server/
+JinnoMacBook-Pro:sample-web-server jinmizou$ cd mywebapi/
+JinnoMacBook-Pro:mywebapi jinmizou$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (mywebapi) 
+version: (1.0.0) 
+description: 
+entry point: (index.js) 
+test command: 
+git repository: 
+keywords: 
+author: 
+license: (ISC) 
+About to write to /Users/jinmizou/Documents/fujiwara/sample-web-server/mywebapi/package.json:
+
+{
+  "name": "mywebapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes) 
+JinnoMacBook-Pro:mywebapi jinmizou$ npm install --save express
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN mywebapi@1.0.0 No description
+npm WARN mywebapi@1.0.0 No repository field.
+
++ express@4.17.1
+added 50 packages from 37 contributors and audited 126 packages in 5.795s
+found 0 vulnerabilities
+
+JinnoMacBook-Pro:mywebapi jinmizou$ code .
+JinnoMacBook-Pro:mywebapi jinmizou$ node index.js
+Listening on port 3000
+^C
+JinnoMacBook-Pro:mywebapi jinmizou$ node index.js
+Listening on port 3000
+^C
+JinnoMacBook-Pro:mywebapi jinmizou$ 
 ```
